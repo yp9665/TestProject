@@ -1,11 +1,16 @@
-name: Build Android App
+name: Android CI
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   build:
+    name: Build Android APK
     runs-on: ubuntu-latest
 
     defaults:
@@ -13,31 +18,25 @@ jobs:
         working-directory: Template
 
     steps:
-      - name: 📦 Checkout Repository
+      - name: 📥 Checkout Repository
         uses: actions/checkout@v3
 
-      - name: 🔧 Set up Node.js
+      - name: 🟢 Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 18
 
-      - name: 📥 Install NPM Dependencies
+      - name: 📦 Install NPM dependencies
         run: npm install
 
-      - name: 🔧 Set up JDK 11
+      - name: ☕ Set up Java
         uses: actions/setup-java@v3
         with:
-          java-version: '11'
           distribution: 'temurin'
+          java-version: 11
 
-      - name: 🔓 Make gradlew executable
+      - name: 📜 Grant Gradle permission
         run: chmod +x android/gradlew
 
-      - name: ⚙️ Build APK
+      - name: 🏗️ Build Android Release APK
         run: cd android && ./gradlew assembleRelease
-
-      - name: 📦 Upload APK artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: app-release-apk
-          path: Template/android/app/build/outputs/apk/release/app-release.apk
