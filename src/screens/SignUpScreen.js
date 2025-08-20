@@ -9,7 +9,8 @@ const SignUpScreen = ({ navigation }) => {
       <TextInput style={styles.input} placeholder="Name" />
       <TextInput style={styles.input} placeholder="Email" keyboardType="email-address" />
       <TextInput style={styles.input} placeholder="Password" secureTextEntry />
-
+      <TextInput style={styles.input} placeholder='Confirm Password' secureTextEntry />
+      <TextInput style={styles.input} placeholder='Address' secureTextEntry multiline={2} />
       <Button title="Create Account" onPress={() => navigation.replace('Dashboard')} />
       <Text style={styles.link} onPress={() => navigation.goBack()}>
         Already have an account? Login

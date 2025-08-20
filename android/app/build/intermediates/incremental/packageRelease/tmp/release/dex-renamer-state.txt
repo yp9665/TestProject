@@ -1,0 +1,4 @@
+#Wed Aug 20 15:11:45 IST 2025
+base.0=/Users/chirpn/Desktop/Demo/TestProject/android/app/build/intermediates/dex/release/mergeDexRelease/classes.dex
+renamed.0=classes.dex
+path.0=classes.dex

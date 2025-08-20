@@ -1,0 +1,7 @@
+{
+  "androidApkVersion": "3.0",
+  "androidBundleVersion": "1.0.128",
+  "iosApkVersion": "1.0.0",
+  "iosBundleVersion": "1.0.0",
+  "bundleUrl": "https://roardev.blob.core.windows.net/bundles/index.android.bundle"
+}

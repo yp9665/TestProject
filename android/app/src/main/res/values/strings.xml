@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Template</string>
+      <!-- Revopush Config -->
+<string moduleConfig="true" name="CodePushDeploymentKey">RlLjmxdOaJwQusOksXr9UvG8G05kEk6FMb6OGg</string>
 </resources>
